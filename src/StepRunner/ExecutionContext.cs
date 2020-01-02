@@ -6,7 +6,7 @@ namespace StepRunner
     {
         public ExecutionContext(
             ILogger logger, 
-            IReadOnlyDictionary<string, string> inputs,
+            IReadOnlyDictionary<string, object> inputs,
             string stepName,
             string description)
         {
@@ -18,12 +18,12 @@ namespace StepRunner
 
         public ILogger Logger { get; }
 
-        public IReadOnlyDictionary<string, string> Inputs { get; }
+        public IReadOnlyDictionary<string, object> Inputs { get; }
 
         public string StepName { get; }
 
         public string Description { get; }
         
-        public IDictionary<string, string> Outputs { get; } = new Dictionary<string, string>();
+        public IDictionary<string, object> Outputs { get; set; } = new Dictionary<string, object>();
     }
 }

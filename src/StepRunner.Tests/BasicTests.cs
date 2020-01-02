@@ -19,7 +19,33 @@ namespace StepRunner
             
             var context = new ExecutionContext(
                 NullLogger.Create(),
-                new Dictionary<string, string>
+                new Dictionary<string, object>
+                {
+                    { "Name", "Barnardos" }
+                },
+                "Hello",
+                "Hello Barnardos");
+
+            await helloStep.RunAsync(context);
+            
+            var outputs = context.Outputs;
+
+            outputs.Count.Should().Be(1);
+            outputs.Keys.Should().Contain("Result");
+            outputs["Result"].Should().Be("Hello, Barnardos");
+        }
+        
+        [Test]
+        public async Task Should_Return_HelloTyped()
+        {
+            var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.HelloTyped, StepRunner.Steps");
+            var helloStep = helloInstance as IStep;
+
+            helloStep.Should().NotBeNull();
+            
+            var context = new ExecutionContext(
+                NullLogger.Create(),
+                new Dictionary<string, object>
                 {
                     { "Name", "Barnardos" }
                 },

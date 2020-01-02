@@ -6,8 +6,8 @@ namespace StepRunner
     {
         string StepName { get; }
         string Description { get; }
-        IReadOnlyDictionary<string, string> Inputs { get; }
-        IDictionary<string, string> Outputs { get; }
+        IReadOnlyDictionary<string, object> Inputs { get; }
+        IDictionary<string, object> Outputs { get; set; }
         ILogger Logger { get; }
     }
 }

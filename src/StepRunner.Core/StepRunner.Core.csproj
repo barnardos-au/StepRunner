@@ -12,4 +12,8 @@
         <RootNamespace>StepRunner</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="ServiceStack.Text.Core" Version="5.7.0" />
+    </ItemGroup>
+
 </Project>
