@@ -12,6 +12,7 @@ namespace StepRunner.Tests
         [Test]
         public async Task Should_Return_Hello()
         {
+            // Act
             var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.Tests.Steps.Hello, StepRunner.Steps");
             var helloStep = helloInstance as IStep;
 
@@ -30,6 +31,7 @@ namespace StepRunner.Tests
             
             var outputs = context.Outputs;
 
+            // Assert
             outputs.Count.Should().Be(1);
             outputs.Keys.Should().Contain("Result");
             outputs["Result"].Should().Be("Hello, Barnardos");
@@ -38,6 +40,7 @@ namespace StepRunner.Tests
         [Test]
         public async Task Should_Return_HelloTyped()
         {
+            // Act
             var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.Tests.Steps.HelloTyped, StepRunner.Steps");
             var helloStep = helloInstance as IStep;
 
@@ -56,6 +59,7 @@ namespace StepRunner.Tests
             
             var outputs = context.Outputs;
 
+            // Assert
             outputs.Count.Should().Be(1);
             outputs.Keys.Should().Contain("Result");
             outputs["Result"].Should().Be("Hello, Barnardos");

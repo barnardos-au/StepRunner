@@ -13,12 +13,15 @@ namespace StepRunner.Tests
         [Test]
         public async Task Should_Run_Project()
         {
+            // Arrange
             var testLogger = new TestLogger();
             var projectRunner = new ProjectRunner(testLogger);
             var projectFile = Path.Combine(AppContext.BaseDirectory, "sample1.yaml");
          
+            // Act
             await projectRunner.RunAsync(projectFile);
 
+            // Assert
             testLogger.LogEntries.Count.Should().Be(1);
             testLogger.LogEntries.Single().Should().Be("Hello, Neil");
         }
