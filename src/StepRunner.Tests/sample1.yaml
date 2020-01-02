@@ -1,0 +1,21 @@
+Name: Sample
+Description: Doesn't do very much at present
+Version: 1.0
+
+Variables:
+  BaseDirectory: c:\temp
+
+Steps:
+  - Type: StepRunner.Hello, StepRunner.Steps
+    Name: First step
+    Description: Does something
+    Inputs:
+      Name: Barnardos
+    IsDisabled: false
+
+  - Type: StepRunner.HelloTyped, StepRunner.Steps
+    Name: Second step
+    Description: Does something else
+    Inputs:
+      Name: Neil
+    IsDisabled: false

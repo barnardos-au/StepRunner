@@ -19,6 +19,7 @@
 
     <ItemGroup>
         <PackageReference Include="ServiceStack.Text.Core" Version="5.7.0" />
+        <PackageReference Include="YamlDotNet" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -26,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\Images\barnardos.png" Pack="true" PackagePath="\"/>
+        <None Include="..\Images\barnardos.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>
