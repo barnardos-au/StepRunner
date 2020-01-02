@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace StepRunner
+namespace StepRunner.Tests.Steps
 {
     public class HelloTyped : TypedStep<HelloInput, HelloOutput>
     {
@@ -8,10 +8,14 @@ namespace StepRunner
         {
             await Task.CompletedTask;
             
-            return new HelloOutput
+            var result = new HelloOutput
             {
                 Result = $"Hello, {input.Name}"
             };
+            
+            Context.Logger.Log(result.Result);
+
+            return result;
         }
     }
     

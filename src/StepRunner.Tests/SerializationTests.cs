@@ -1,17 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
-using ServiceStack;
 using StepRunner.Models;
 
-namespace StepRunner
+namespace StepRunner.Tests
 {
     [TestFixture]
     public class SerializationTests
     {
         [Test]
-        public async Task Should_Create_Yaml_Doc()
+        public void Should_Create_Yaml_Doc()
         {
             var project = new Project
             {
@@ -22,11 +19,11 @@ namespace StepRunner
                 {
                     {"BaseDirectory", @"c:\temp"}
                 },
-                Steps = new Steps
+                Steps = new Models.Steps
                 {
                     new Step
                     {
-                        Type = "StepRunner.Hello, StepRunner.Steps",
+                        Type = "StepRunner.Tests.Steps.Hello, StepRunner.Tests",
                         Name = "First step",
                         Description = "Does something",
                         Inputs = new Variables
@@ -36,7 +33,7 @@ namespace StepRunner
                     },
                     new Step
                     {
-                        Type = "StepRunner.HelloTyped, StepRunner.Steps",
+                        Type = "StepRunner.Tests.Steps.HelloTyped, StepRunner.Tests",
                         Name = "Second step",
                         Description = "Does something else",
                         Inputs = new Variables

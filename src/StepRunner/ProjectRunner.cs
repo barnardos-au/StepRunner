@@ -7,6 +7,13 @@ namespace StepRunner
 {
     public class ProjectRunner
     {
+        private readonly ILogger logger;
+
+        public ProjectRunner(ILogger logger)
+        {
+            this.logger = logger;
+        }
+        
         public async Task RunAsync(string projectFile)
         {
             var deserializer = new YamlDotNet.Serialization.Deserializer();
@@ -20,7 +27,7 @@ namespace StepRunner
                 if (projectStep.IsDisabled) continue;
                 
                 var stepContext = new ExecutionContext(
-                    NullLogger.Create(), 
+                    logger, 
                     globalContext.GetInputs(projectStep.Name),
                     projectStep.Name,
                     projectStep.Description);

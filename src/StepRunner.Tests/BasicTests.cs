@@ -4,7 +4,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using ServiceStack;
 
-namespace StepRunner
+namespace StepRunner.Tests
 {
     [TestFixture]
     public class BasicTests
@@ -12,7 +12,7 @@ namespace StepRunner
         [Test]
         public async Task Should_Return_Hello()
         {
-            var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.Hello, StepRunner.Steps");
+            var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.Tests.Steps.Hello, StepRunner.Steps");
             var helloStep = helloInstance as IStep;
 
             helloStep.Should().NotBeNull();
@@ -38,7 +38,7 @@ namespace StepRunner
         [Test]
         public async Task Should_Return_HelloTyped()
         {
-            var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.HelloTyped, StepRunner.Steps");
+            var helloInstance = ReflectionExtensions.CreateInstance("StepRunner.Tests.Steps.HelloTyped, StepRunner.Steps");
             var helloStep = helloInstance as IStep;
 
             helloStep.Should().NotBeNull();

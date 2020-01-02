@@ -6,14 +6,14 @@ Variables:
   BaseDirectory: c:\temp
 
 Steps:
-  - Type: StepRunner.Hello, StepRunner.Steps
+  - Type: StepRunner.Tests.Steps.Hello, StepRunner.Tests
     Name: First step
     Description: Does something
     Inputs:
       Name: Barnardos
-    IsDisabled: false
+    IsDisabled: true
 
-  - Type: StepRunner.HelloTyped, StepRunner.Steps
+  - Type: StepRunner.Tests.Steps.HelloTyped, StepRunner.Tests
     Name: Second step
     Description: Does something else
     Inputs:
