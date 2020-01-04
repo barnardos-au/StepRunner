@@ -14,9 +14,7 @@ namespace NUnitTestRunner
 
             await Task.Delay(2000);
 
-            Assert.Pass("Test 2A passed ");
-            
-            Console.WriteLine("Test 2A ended");
+            Assert.Pass("Test 2A passed");
         }
         
         [Test]
@@ -26,9 +24,7 @@ namespace NUnitTestRunner
 
             await Task.Delay(2000);
 
-            Assert.Pass("Test 2B passed ");
-            
-            Console.WriteLine("Test 2B ended");
+            Assert.Pass("Test 2B passed");
         }
         
         [Test]
@@ -38,9 +34,7 @@ namespace NUnitTestRunner
 
             await Task.Delay(2000);
 
-            Assert.Pass("Test 2C passed ");
-            
-            Console.WriteLine("Test 2C ended");
+            Assert.Pass("Test 2C passed");
         }
         
         [Test]
@@ -50,9 +44,7 @@ namespace NUnitTestRunner
 
             await Task.Delay(2000);
 
-            Assert.Pass("Test 2D passed ");
-            
-            Console.WriteLine("Test 2D ended");
+            Assert.Pass("Test 2D passed");
         }
         
         [Test]
@@ -62,9 +54,7 @@ namespace NUnitTestRunner
 
             await Task.Delay(2000);
 
-            Assert.Pass("Test 2E passed ");
-            
-            Console.WriteLine("Test 2E ended");
+            Assert.Pass("Test 2E passed");
         }
     }
 }

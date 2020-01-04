@@ -1,7 +1,9 @@
-﻿using NUnit.Engine;
+﻿using System;
+using NUnit.Engine;
 using System.Xml;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using NUnit.Engine.Listeners;
 
 [assembly: Parallelizable(ParallelScope.Fixtures)]
 
@@ -23,14 +25,12 @@ namespace NUnitTestRunner
 
             TestFilter emptyFilter = builder.GetFilter();
             //ITestEventListener testListener = new MyTestEventListener();
-            var testListener = new NUnit.Engine.Listeners.TeamCityEventListener();
+            var testListener = new TeamCityEventListener();
 
             using (ITestRunner runner = nunitEngine.GetRunner(package))
             {
                 //XmlNode result = runner.Explore(emptyFilter);
                 var result = runner.Run(testListener, emptyFilter);
-                //var result1 = runner.RunAsync(testListener, emptyFilter);
-                //result1.Wait(10000);
             }
 
         }
