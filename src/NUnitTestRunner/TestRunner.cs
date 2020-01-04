@@ -16,7 +16,7 @@ namespace NUnitTestRunner
             var assembly = System.Reflection.Assembly.GetEntryAssembly();
 
             TestPackage package = new TestPackage(assembly.Location);
-            package.AddSetting("NumberOfTestWorkers", 2);
+            package.AddSetting("NumberOfTestWorkers", 4);
 
             var filterService = nunitEngine.Services.GetService<ITestFilterService>();
             ITestFilterBuilder builder = filterService.GetTestFilterBuilder();
