@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using NUnit.Engine;
+using NUnit.Engine.Listeners;
 using NUnitSelfRunner.Listeners;
 
 namespace NUnitSelfRunner
@@ -26,8 +27,8 @@ namespace NUnitSelfRunner
             var testFilterBuilder = filterService.GetTestFilterBuilder();
 
             var testFilter = testFilterBuilder.GetFilter();
-            var testListener = new ConsoleEventListener();
-            //var testListener = new TeamCityEventListener();
+            //var testListener = new ConsoleEventListener();
+            var testListener = new TeamCityEventListener();
 
             using (var testRunner = testEngine.GetRunner(testPackage))
             {
