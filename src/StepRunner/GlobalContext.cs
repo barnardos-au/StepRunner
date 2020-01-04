@@ -101,7 +101,7 @@ namespace StepRunner
                 variableMatch = variableMatch.NextMatch();
             }
 
-            return pattern;
+            return stringPattern;
         }
     }
 }

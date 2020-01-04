@@ -8,14 +8,28 @@ Variables:
 Steps:
   - Type: StepRunner.Tests.Steps.Hello, StepRunner.Tests
     Name: First step
-    Description: Does something
+    Description: Displays hello message
     Inputs:
       Name: Barnardos
     IsDisabled: true
 
   - Type: StepRunner.Tests.Steps.HelloTyped, StepRunner.Tests
     Name: Second step
-    Description: Does something else
+    Description: Displays another hello message
     Inputs:
       Name: Neil
+    IsDisabled: false
+
+  - Type: StepRunner.Tests.Steps.ReverseName, StepRunner.Tests
+    Name: Third step
+    Description: Reverses the previous output
+    Inputs:
+      Name: "#{[Second step].Outputs.Result}"
+    IsDisabled: false
+
+  - Type: StepRunner.Tests.Steps.PassThrough, StepRunner.Tests
+    Name: Fourth step
+    Description: Passes on previous output
+    Inputs:
+      Value: "Forward: #{[Second step].Outputs.Result}, Backward: #{[Third step].Outputs.Result}"
     IsDisabled: false

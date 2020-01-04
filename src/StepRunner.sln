@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepRunner", "StepRunner\StepRunner.csproj", "{40F2B48C-F894-4411-B447-588B3EC680C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepRunner", "StepRunner\StepRunner.csproj", "{40F2B48C-F894-4411-B447-588B3EC680C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepRunner.Steps", "StepRunner.Steps\StepRunner.Steps.csproj", "{B8EC9D4E-34E9-4745-9C91-587772095650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepRunner.Steps", "StepRunner.Steps\StepRunner.Steps.csproj", "{B8EC9D4E-34E9-4745-9C91-587772095650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepRunner.Core", "StepRunner.Core\StepRunner.Core.csproj", "{E1BE4127-B50E-49E0-BF9D-D360345E681F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepRunner.Core", "StepRunner.Core\StepRunner.Core.csproj", "{E1BE4127-B50E-49E0-BF9D-D360345E681F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepRunner.Tests", "StepRunner.Tests\StepRunner.Tests.csproj", "{CC2560D6-20A2-43EF-8FC8-EDBB8AC72435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepRunner.Tests", "StepRunner.Tests\StepRunner.Tests.csproj", "{CC2560D6-20A2-43EF-8FC8-EDBB8AC72435}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepRunner.Workflow", "StepRunner.Workflow\StepRunner.Workflow.csproj", "{EA01A0DD-DEE7-49F0-A250-1BB08F61C74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestRunner", "NUnitTestRunner\NUnitTestRunner.csproj", "{B4CB5135-6275-41E9-9150-D4FC67081585}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{CC2560D6-20A2-43EF-8FC8-EDBB8AC72435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC2560D6-20A2-43EF-8FC8-EDBB8AC72435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC2560D6-20A2-43EF-8FC8-EDBB8AC72435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA01A0DD-DEE7-49F0-A250-1BB08F61C74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA01A0DD-DEE7-49F0-A250-1BB08F61C74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA01A0DD-DEE7-49F0-A250-1BB08F61C74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA01A0DD-DEE7-49F0-A250-1BB08F61C74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4CB5135-6275-41E9-9150-D4FC67081585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4CB5135-6275-41E9-9150-D4FC67081585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4CB5135-6275-41E9-9150-D4FC67081585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4CB5135-6275-41E9-9150-D4FC67081585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

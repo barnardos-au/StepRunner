@@ -1,4 +1,4 @@
-namespace StepRunner
+namespace StepRunner.Loggers
 {
     public class NullLogger : ILogger
     {

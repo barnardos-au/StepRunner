@@ -22,8 +22,9 @@ namespace StepRunner.Tests
             await projectRunner.RunAsync(projectFile);
 
             // Assert
-            testLogger.LogEntries.Count.Should().Be(1);
-            testLogger.LogEntries.Single().Should().Be("Hello, Neil");
+            testLogger.LogEntries.Count.Should().Be(3);
+            testLogger.LogEntries.First().Should().Be("Hello, Neil");
+            testLogger.LogEntries.Last().Should().Be("Forward: Hello, Neil, Backward: lieN ,olleH");
         }
     }
 }
