@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
-namespace NUnitTestRunner
+namespace SampleTests
 {
     [TestFixture]
     public class TestFixture4
