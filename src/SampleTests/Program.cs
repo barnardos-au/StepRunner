@@ -6,7 +6,7 @@ namespace SampleTests
     {
         public static void Main(string[] args)
         {
-            RunTests.Start(args);
+            Tests.Run(args);
         }
     }
 }

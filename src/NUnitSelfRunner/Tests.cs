@@ -5,15 +5,15 @@ using NUnitSelfRunner.Listeners;
 
 namespace NUnitSelfRunner
 {
-    public static class RunTests
+    public static class Tests
     {
-        public static void Start(string[] args)
+        public static void Run(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
-                .WithParsed(Run);
+                .WithParsed(Start);
         }
 
-        private static void Run(Options options)
+        private static void Start(Options options)
         {
             var testEngine = TestEngineActivator.CreateInstance();
 
