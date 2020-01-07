@@ -10,6 +10,7 @@
         <PackageReference Include="FluentAssertions" Version="5.9.0" />
         <PackageReference Include="NUnit.Engine" Version="3.10.0" />
         <PackageReference Include="NUnit.Engine.Api" Version="3.10.0" />
+        <PackageReference Include="ServiceStack.Server.Core" Version="5.7.0" />
         <PackageReference Include="ServiceStack.Text.Core" Version="5.7.0" />
         <PackageReference Include="NUnit" Version="3.12.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
