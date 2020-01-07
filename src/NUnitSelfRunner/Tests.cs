@@ -9,6 +9,8 @@ namespace NUnitSelfRunner
     {
         public static void Run(string[] args)
         {
+            // dotnet app.dll -s NumberOfTestWorkers=4 --teamcity
+
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(Start);
         }
@@ -20,16 +22,27 @@ namespace NUnitSelfRunner
             var assembly = System.Reflection.Assembly.GetEntryAssembly();
 
             var testPackage = new TestPackage(assembly.Location);
-            testPackage.AddSetting("NumberOfTestWorkers", 4);
+            foreach (var setting in options.GetSettings())
+            {
+                testPackage.AddSetting(setting.Key, setting.Value);
+            }
 
             var filterService = testEngine.Services.GetService<ITestFilterService>();
             
             var testFilterBuilder = filterService.GetTestFilterBuilder();
 
             var testFilter = testFilterBuilder.GetFilter();
-            //var testListener = new ConsoleEventListener();
-            var testListener = new TeamCityEventListener();
-
+            
+            ITestEventListener testListener;
+            if (options.TeamCity)
+            {
+                testListener = new TeamCityEventListener();
+            }
+            else
+            {
+                testListener = new ConsoleEventListener();
+            }
+            
             using (var testRunner = testEngine.GetRunner(testPackage))
             {
                 //XmlNode result = runner.Explore(emptyFilter);

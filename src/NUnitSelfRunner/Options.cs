@@ -5,21 +5,33 @@ namespace NUnitSelfRunner
 {
     internal class Options
     {
-        [Option('r', "read", Required = false, HelpText = "Input files to be processed.")]
-        public IEnumerable<string> InputFiles { get; set; }
+        [Option('s', "settings", Required = false, HelpText = "Settings")]
+        public IEnumerable<string> SettingArgs { get; set; }
 
-        // Omitting long name, defaults to name of property, ie "--verbose"
-        [Option(
+        [Option("teamcity",
             Default = false,
-            HelpText = "Prints all messages to standard output.")]
-        public bool Verbose { get; set; }
-  
-        [Option("stdin",
-            Default = false,
-            HelpText = "Read from stdin")]
-        public bool stdin { get; set; }
+            HelpText = "Use TeamCity event listener")]
+        public bool TeamCity { get; set; }
 
-        [Value(0, MetaName = "offset", HelpText = "File offset.")]
-        public long? Offset { get; set; }
+        public Dictionary<string, object> GetSettings()
+        {
+            var dictionary = new Dictionary<string, object>();
+            foreach (var arg in SettingArgs)
+            {
+                var parts = arg.Split('=');
+                var left = parts[0];
+                var right = parts.Length > 1 ? parts[1] : string.Empty;
+                if (int.TryParse(right, out var num))
+                {
+                    dictionary[left] = num;
+                }
+                else
+                {
+                    dictionary[left] = right;
+                }
+            }
+
+            return dictionary;
+        }
     }
 }
